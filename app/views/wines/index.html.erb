@@ -5,41 +5,26 @@
     <tr>
       <td>Image</td>
       <td>Title</td>
-      <td>Description</td>
-     
-      <td>Origin</td>
-      <td>Type</td>
-      <td>Size</td>
+      <td>Description</td> 
       <td>Price</td>
-      <td>Company</td>
+      <td> </td>
     </tr>
-    
+  
     <%@wines.each do |u|%>
     <tr>
       <td><%=u[:Img_url]%></td>
       <td><%=u[:Title]%></td>
       <td><%=u[:Description]%></td>
-      
-      <td><%=u[:Origin]%></td>
-      <td><%=u[:Type]%></td>
-      <td><%=u[:Size]%></td>
       <td><%=u[:Price]%></td>
-      <td><%=u[:Company]%></td>
+      <td> <%= button_to "View", wine_show_path(u)%></td>
     </tr>
+        
    <%end%>
-    <%@wines_b.each do |u|%>
-    <tr>
-      <td><%=u[:Img_url]%></td>
-      <td><%=u[:Title]%></td>
-      <td><%=u[:Description]%></td>
+
+
+   
       
-      <td><%=u[:Origin]%></td>
-      <td><%=u[:Type]%></td>
-      <td><%=u[:Size]%></td>
-      <td><%=u[:Price]%></td>
-      <td><%=u[:Company]%></td>
-    </tr>
-   <%end%>
+   
   </table>
 <%else%>
   <p>No Wines is Found</p>
